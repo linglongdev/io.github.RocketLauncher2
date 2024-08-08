@@ -1,0 +1,48 @@
+From b2b6233838c8ab31d9c9b2eb9c060f2565d32ae9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 8 Aug 2024 15:36:00 +0800
+Subject: [PATCH] install
+
+---
+ RocketLauncher2.desktop | 11 +++++++++++
+ RocketLauncher2.pro     |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 RocketLauncher2.desktop
+
+diff --git a/RocketLauncher2.desktop b/RocketLauncher2.desktop
+new file mode 100644
+index 0000000..5657b85
+--- /dev/null
++++ b/RocketLauncher2.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=RocketLauncher2
++Name=RocketLauncher2
++Name[zh_CN]=RocketLauncher2
++Icon=ZDoomlogo
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=RocketLauncher2
++Version=2.0
+\ No newline at end of file
+diff --git a/RocketLauncher2.pro b/RocketLauncher2.pro
+index 68f0fc3..dc53008 100644
+--- a/RocketLauncher2.pro
++++ b/RocketLauncher2.pro
+@@ -42,3 +42,11 @@ QMAKE_TARGET_COMPANY = Techpillar
+ QMAKE_TARGET_PRODUCT = Rocket Launcher 2.0
+ QMAKE_TARGET_DESCRIPTION = Rocket Launcher 2.0
+ QMAKE_TARGET_COPYRIGHT = Hypnotoad
++
++target.path = $$PREFIX/bin
++desktop.files = RocketLauncher2.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = img/ZDoomlogo.png
++
++INSTALLS += target desktop icons
+-- 
+2.43.4
+

@@ -1,0 +1,28 @@
+version: "1"
+
+package:
+  id: io.github.RocketLauncher2
+  name: RocketLauncher2
+  version: 0.2.0.0
+  kind: app
+  description: |
+    Rocket Launcher 2.0 - A cross platform front end for all DOOM source ports.
+
+command:
+  - /opt/apps/io.github.RocketLauncher2/files/bin/RocketLauncher2
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/Hypnotoad90/RocketLauncher2.git
+    version: master
+    commit: bdb48cdc4ae343b0b21d31fbedffa8f6fb559180
+
+build: |
+  cd /project/linglong/sources/RocketLauncher2.git
+  git apply ../../../0001-install.patch
+  qmake -makefile PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make
+  make install
